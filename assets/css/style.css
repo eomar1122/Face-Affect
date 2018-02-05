@@ -6,15 +6,14 @@ body{
 }
 
 .box{
-    width: 300px;
-    height: 200px;
+
     background: white;
     margin: 0 auto;
 }
 
 .box:hover{
     border: 4px solid grey;
-    background: rgb(13, 126, 231);
+
 }
 
 footer{
@@ -23,9 +22,29 @@ footer{
     background: grey;
     color: white;
 }
-
+.wrapper {
+    width: 1000px;
+    margin: auto;
+}
 .jumbotron{
-    background: rgb(255, 255, 255);
+    background: url(../images/header-image-mobile.jpg);
+    background: url(../images/portrait-logo.jpg);
+    background-position-x: center;
+    background-position-y: center;
+    width: 100%;
+    height: 470px;
+}
+.jumbotron-fav{
+    background: url(../images/header-image-mobile.jpg);
+    background: url(../images/portrait-logo.jpg);
+    background-position-x: center;
+    background-position-y: center;
+    width: 100%;
+    height: 470px;
+}
+.jumbotron p {
+    font-size: 20px;
+    font-weight: 800;
 }
 
 
@@ -147,4 +166,15 @@ span.psw {
     .cancelbtn {
        width: 100%;
     }
+}
+
+/*this is for the home page*/
+.faceAffect{
+    width: 600px;
+    height: 200px;
+    background: rgb(61, 61, 61);
+    border: 4px solid black;
+    color: white;
+    margin: auto;
+    font-size: 25px;
 }

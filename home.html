@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FaceAffect</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/flavicon.jpg" />
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <!--bootstrap link here-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    </head>
+    <body>
+            <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span> 
+                        </button>
+                        <a class="navbar-brand" href="#">FaceAffect</a>
+                      </div>
+                      <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                          <li class="active"><a href="home.html">Home</a></li>
+                          <li class="active"><a href="favorites.html">Favorites</a></li>
+                        </ul>
+                       
+                        <ul class="nav navbar-nav navbar-right">
+                            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+                          <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Login</button>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+
+                
+                  <div class="jumbotron text-center">
+                        <p>M</p>
+                        <p>U</p>
+                        <p>S</p>
+                        <p>I</p>
+                        <p>C</p>
+                        <p></p>
+                        <p>N</p>
+                        <p></p>
+                        <p>F</p>
+                        <p>L</p>
+                        <p>O</p>
+                        <p>W</p>
+            
+                   
+                    </div>   
+                  
+                    <div class= "wrapper">
+                     <div class="faceAffect">
+                         <h3>Upload Your Image</h3>
+                         <p>Submit a selfie for personalized music selections based on your mood</p>
+                         <button type="button" class="btn btn-info">Submit</button>
+                     </div>
+                      
+
+
+
+                      <div id="id01" class="modal">
+  
+                          <form class="modal-content animate" action="/action_page.php">
+                            <div class="imgcontainer">
+                              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        
+                            </div>
+                        
+                            <div class="container2">
+                              <h2>Sign Up</h2>
+                              <label><b>Username</b></label>
+                              <input type="text" placeholder="Enter Username" name="uname" required>
+                        
+                              <label><b>Create Password</b></label>
+                              <input type="password" placeholder="Create Password" name="psw" required>
+
+
+                              <label><b>Re Enter Password</b></label>
+                              <input type="password" placeholder="Re Enter Password" name="psw" required>
+                                
+                              <button type="submit">Submit</button>
+                             
+                            </div>
+                        
+                            <div class="container2" style="background-color:#f1f1f1">
+                              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        
+                            </div>
+                          </form>
+                        </div>
+
+
+
+                       <div id="id02" class="modal">
+  
+                          <form class="modal-content animate" action="/action_page.php">
+                            <div class="imgcontainer">
+                              <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        
+                            </div>
+                        
+                            <div class="container2">
+                              <label><b>Username</b></label>
+                              <input type="text" placeholder="Enter Username" name="uname" required>
+                        
+                              <label><b>Password</b></label>
+                              <input type="password" placeholder="Enter Password" name="psw" required>
+                                
+                              <button type="submit">Login</button>
+                              <label>
+                                <input type="checkbox" checked="checked"> Remember me
+                              </label>
+                            </div>
+                        
+                            <div class="container2" style="background-color:#f1f1f1">
+                              <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                              <span class="psw">Forgot <a href="#">password?</a></span>
+                            </div>
+                          </form>
+                        </div>
+                </div>
+                        
+                        
+                      
+
+
+
+
+<footer>copyrights 2018</footer>
+
+        <!--jquery here-->
+  
+        <script src="assets/javascript/main.js"></script>
+    </body>
+</html>
