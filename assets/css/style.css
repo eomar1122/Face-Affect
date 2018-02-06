@@ -1,22 +1,16 @@
+/* General effects*/
 body{
-    background: rgb(231, 231, 231);
+    background: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/90/42/3457dce0f21d524.jpg");
     margin: 0 auto;
-    text-align: center;
-   
-}
-
-.box{
-
-    background: white;
-    margin: 0 auto;
-}
-
-.box:hover{
-    border: 4px solid grey;
-
+    text-align: center; 
 }
 nav {
-    font-family: 'Righteous', cursive;
+    font-family: 'Righteous', cursive; 
+    opacity: 0.7;
+    position: fixed;
+}
+.navbar-brand {
+    color: rgb(238,69,126);
 }
 .container {
     font-family: 'Righteous', cursive;
@@ -24,20 +18,16 @@ nav {
 footer{
     margin: 10px;
     padding: 30px;
-    background: grey;
+    background: black;
     color: white;
-    position: relative;
+    width: 100%;
+    position: absolute;
     position: 0;
     font-family: 'Righteous', cursive;
-}
-.wrapper {
-    width: 100%;
-    margin: auto;
 }
 /*this is for the home page*/
 .faceAffect{
     max-width: 600px;
-   
     background: rgb(61, 61, 61);
     border: 4px solid black;
     color: white;
@@ -54,20 +44,23 @@ footer{
     width: 100%;
     height: 470px;
 }
-.jumbotron-fav{
-    background: url(../images/header-image-mobile.jpg);
-    background: url(../images/portrait-logo.jpg);
-    background-position-x: center;
-    background-position-y: center;
-    width: 100%;
-    height: 470px;
-}
 .jumbotron p {
     font-size: 20px;
     font-weight: 800;
+    text-shadow: 2px 2px grey;
 }
+/*favorites page*/
+.box{
 
-
+    background: white;
+    margin: 0 auto;
+    border: 1px solid white;
+    border-radius: 50px;
+}
+.wrapper {
+    width: 100%;
+    margin: auto;
+}
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -79,7 +72,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: rgb(39, 100, 231);
+    background-color: rgb(78,175,188);
     color: white;
     padding: 8px 12px;
     margin: 8px 0;
@@ -88,12 +81,25 @@ button {
     width: 100%;
 
 }
-
+.submit {
+    background-color: rgb(245,152,136);
+}
 button:hover {
-    background: rgb(47, 137, 255);
+    background:rgb(91, 201, 216);
     color: white;
 }
-
+.dropdown-toggle:active {
+    background:pink;
+}
+.dropdown-toggle {
+    background-color: rgb(78,175,188);
+    border: 2px solid white;
+}
+.dropdown-toggle:hover {
+    background-color: rgb(98, 223, 240);
+    color: white;
+    border: 1px solid white;
+}
 /* Extra styles for the cancel button */
 .cancelbtn {
     width: auto;
