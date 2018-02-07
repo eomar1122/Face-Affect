@@ -91,9 +91,6 @@ button:hover {
     background:rgb(91, 201, 216);
     color: white;
 }
-.dropdown-toggle:focus {
-    background-color:pink;
-}
 .dropdown-toggle {
     background-color: rgb(78,175,188);
     border: 2px solid white;
