@@ -1,10 +1,6 @@
-$(function () {
- 
-
-
-
-
-}) // END DOCUMENT READY 
-
+$(".submit").click(function(){
+    $('#myModal').modal('show');
+    });
+    
 
 
