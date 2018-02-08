@@ -49,79 +49,85 @@ $("#submit-btn").on("click", function (event) {
     // Check if the form is empty or not
     if (nameInput != '' && file != null) {
         // Check if the inputs are valid inputs
-        if (validateKey && fileName.endsWith(".png") || fileName.endsWith(".jpg") || fileName.endsWith(".jpeg")) {
-            // Create a storage ref
-            var storageRef = storage.ref("images/" + file.name);
-            $("#myModal").modal("show");
-            //display modal text if form submitted
-            $(".modal-body").html("Congratulations! Start listening now...");
-            // Upload file
-            var task = storageRef.put(file).then(function (snapshot) {
-                // console.log("Done uploading");
-                // console.log(snapshot.downloadURL);
-                imageURL = snapshot.downloadURL;
-                // console.log(imageURL);
+        if (validateKey) {
+            if (fileName.endsWith(".png") || fileName.endsWith(".jpg") || fileName.endsWith(".jpeg")) {
+                // Create a storage ref
+                var storageRef = storage.ref("images/" + file.name);
+                $("#myModal").modal("show");
+                //display modal text if form submitted
+                $(".modal-body").html("Congratulations! Start listening now...");
+                // Upload file
+                var task = storageRef.put(file).then(function (snapshot) {
+                    // console.log("Done uploading");
+                    // console.log(snapshot.downloadURL);
+                    imageURL = snapshot.downloadURL;
+                    // console.log(imageURL);
 
-                //===========================
-                //  FACE PLUS PLUS AJAX CALL
-                //===========================
+                    //===========================
+                    //  FACE PLUS PLUS AJAX CALL
+                    //===========================
 
-                $.ajax({
-                    url: "https://api-us.faceplusplus.com/facepp/v3/detect",
-                    method: "POST",
-                    data: {
-                        api_key: faceApiKey,
-                        api_secret: faceApiSKey,
-                        image_url: imageURL,
-                        return_attributes: "age,emotion"
+                    $.ajax({
+                        url: "https://api-us.faceplusplus.com/facepp/v3/detect",
+                        method: "POST",
+                        data: {
+                            api_key: faceApiKey,
+                            api_secret: faceApiSKey,
+                            image_url: imageURL,
+                            return_attributes: "age,emotion"
+                        }
+                    }).then(function (response) {
+                        // console.log(response.faces[0].attributes.emotion);
+                        // Get emotions to find out the highest value
+                        var emotions = response.faces[0].attributes.emotion;
+                        sortResponse(emotions);
+                    });
+
+                    function sortResponse(emotion) {
+                        // console.log("Hello", emotion);
+                        for (var key in emotion) {
+                            // emotionArr.push([key, emotion[key]]);
+                            emotionArr.push({
+                                emotion: key,
+                                value: emotion[key]
+                            })
+                        }
+                        // console.log(emotionArr);
+                        // Sort Function
+                        function sortNumber(a, b) {
+                            return b.value - a.value;
+                        }
+
+                        emotionArr.sort(sortNumber);
+
+                        console.log(emotionArr[0]);
+                        // Save data into an object
+                        var newUser = {
+                            name: nameInput,
+                            imageURL: imageURL,
+                            emotion: emotionArr[0].emotion,
+                            emotionValue: emotionArr[0].value
+                        }
+                        // Push newUser object to the firebase
+                        database.ref().push(newUser);
+                        // Empty the input form
+                        $("#name-input").val("");
+                        $("#fileToUpload").val(null);
+                        // Call display function to show return data on the HTML
+                        display();
+                        // Call the playlist function to return the playlist related to input emotion
+                        playList();
                     }
-                }).then(function (response) {
-                    // console.log(response.faces[0].attributes.emotion);
-                    // Get emotions to find out the highest value
-                    var emotions = response.faces[0].attributes.emotion;
-                    sortResponse(emotions);
                 });
-
-                function sortResponse(emotion) {
-                    // console.log("Hello", emotion);
-                    for (var key in emotion) {
-                        // emotionArr.push([key, emotion[key]]);
-                        emotionArr.push({
-                            emotion: key,
-                            value: emotion[key]
-                        })
-                    }
-                    // console.log(emotionArr);
-                    // Sort Function
-                    function sortNumber(a, b) {
-                        return b.value - a.value;
-                    }
-
-                    emotionArr.sort(sortNumber);
-
-                    console.log(emotionArr[0]);
-                    // Save data into an object
-                    var newUser = {
-                        name: nameInput,
-                        imageURL: imageURL,
-                        emotion: emotionArr[0].emotion,
-                        emotionValue: emotionArr[0].value
-                    }
-                    // Push newUser object to the firebase
-                    database.ref().push(newUser);
-                    // Empty the input form
-                    $("#name-input").val("");
-                    $("#fileToUpload").val(null);
-                    // Call display function to show return data on the HTML
-                    display();
-                    // Call the playlist function to return the playlist related to input emotion
-                    playList();
-                }
-            });
+            } else{
+                // Show message to enter valid input
+                $("#myModal").modal("show");
+                $(".modal-body").html("Please use .jpg, .jpeg, or .png format for the photo!");
+            }
         } else {
             // Show message to enter valid input
             $("#myModal").modal("show");
-            $(".modal-body").html("Please enter valid inputs!");
+            $(".modal-body").html("Please use letters to enter your name!");
         }
     } else {
         // Show error message that you missed some inputs
