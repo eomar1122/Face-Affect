@@ -56,6 +56,14 @@ footer{
     text-shadow: 2px 2px grey;
 }
 
+#main-content ul li img {
+  border-radius: 50%;
+}
+
+#main-content ul {
+  list-style-type: none;
+}
+
 /*favorites page*/
 .box{
 
