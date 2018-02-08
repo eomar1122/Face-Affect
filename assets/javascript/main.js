@@ -26,19 +26,18 @@ var imageURL = '';
 var emotionArr = []
 var spotifyPlayList = []
 var playLists = {
-    happiness: "country",
-    neutral: "workout",
-    sadness: "chill",
+    happiness: "edm_dance",
+    neutral: "chill",
+    sadness: "jazz",
     disgust: "focus",
-    anger: "romance",
-    surprise: "classical",
-    fear: "mood"
+    anger: "rock",
+    surprise: "mood",
+    fear: "rnb"
 }
 
 //=================================================================
 //  UPLOAD NAME AND IMAGE TO FIREBASE DATABASE AND FIREBASE STORAGE
 //=================================================================
-
 $("#submit-btn").on("click", function (event) {
     event.preventDefault();
     var nameInput = $("#name-input").val().trim();
