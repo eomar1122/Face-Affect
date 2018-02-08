@@ -23,6 +23,9 @@
   <style type="text/css">body, a:hover {cursor: url(http://cur.cursors-4u.net/others/oth-6/oth507.ani), url(http://cur.cursors-4u.net/others/oth-6/oth507.png), progress !important;}</style><a href="http://www.cursors-4u.com/cursor/2011/01/13/cute-grey-music-note.html" target="_blank" title="Cute Grey Music Note"><img src="http://cur.cursors-4u.net/cursor.png" border="0" alt="Cute Grey Music Note" style="position:absolute; top: 0px; right: 0px;" /></a>
 
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <!-- Firebase Reference -->
+	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
 </head>
 
 <body>
@@ -82,18 +85,19 @@
     <div class="wrapper">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="howToGuide">
+          <div class="howToGuide" id="main-content">
             <h3>How-To Guide:</h3>
             <p>Submit a selfie for personalized music selections based on your mood
             </p>
             <form>
               <div class="form-group">
-                <input type="text" class="form-control" id="usr">
+                <input type="text" class="form-control" id="name-input">
                 <label for="photo-input">Upload your photo</label>
                 <input type="file" name="fileToUpload" value="upload" id="fileToUpload">
-                <button type="button" class="btn submit vibrate-1">Submit</button>
+                <button type="button" id="submit-btn" class="btn submit vibrate-1">Submit</button>
               </div>
             </form>
+            <div id="show-playlist"></div>
           </div>
         </div>
       </div>
