@@ -55,6 +55,10 @@ var playLists = {
 //  UPLOAD NAME AND IMAGE TO FIREBASE DATABASE AND FIREBASE STORAGE
 //=================================================================
 // Get elements documents 
+$(".submit").click(function(){
+    $('#myModal').modal('show');
+    });
+    
 
 $("#submit-btn").on("click", function (event) {
     event.preventDefault();
@@ -250,11 +254,10 @@ function display() {
 // Add name validation function
 
 // Letters validation function
-// function validate(strValue) {
-//     // console.log("Validation function");
-//     var objRegExp = /^[a-zA-Z ]+$/;
-//     // console.log("objRegExp "+ objRegExp.test(strValue));
-//     return objRegExp.test(strValue);
-// }
+function validate(strValue) {
+    // console.log("Validation function");
+    var objRegExp = /^[a-zA-Z ]+$/;
+    return objRegExp.test(strValue);
+}
 
 // Add uploader validation function
