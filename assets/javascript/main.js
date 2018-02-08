@@ -41,13 +41,13 @@ var sadness = [];
 var emotionArr = []
 var spotifyPlayList = []
 var playLists = {
-    happiness: "country",
-    neutral: "workout",
-    sadness: "chill",
+    happiness: "edm_dance",
+    neutral: "chill",
+    sadness: "jazz",
     disgust: "focus",
-    anger: "romance",
-    surprise: "classical",
-    fear: "mood"
+    anger: "rock",
+    surprise: "mood",
+    fear: "rnb"
 }
 
 
@@ -55,17 +55,17 @@ var playLists = {
 //  UPLOAD NAME AND IMAGE TO FIREBASE DATABASE AND FIREBASE STORAGE
 //=================================================================
 // Get elements documents 
-$(".submit").click(function(){
-    $('#myModal').modal('show');
-    });
-    
-
 $("#submit-btn").on("click", function (event) {
     event.preventDefault();
     var nameInput = $("#name-input").val().trim();
     var uploader = document.getElementById("fileToUpload");
     var file = uploader.files[0];
     if (nameInput != '' && file != null) {
+
+    	//display modal
+    	$('#myModal').modal('show');
+    	//display modal text if form submitted
+    	$(".modal-body").html("Congratulations! Start listening now...");
         // Create a storage ref
         var storageRef = storage.ref("images/" + file.name);
 
@@ -139,7 +139,8 @@ $("#submit-btn").on("click", function (event) {
         // console.log("Image uploaded");
 
     } else {
-        alert("Please fill the form!");
+       $('#myModal').modal('show');
+       $(".modal-body").html("Please fill out the form!");
     }
 
 });
