@@ -1,16 +1,54 @@
 /* General effects*/
-body{
-    background: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/90/42/3457dce0f21d524.jpg");
+html,
+body {
+ height: 100%;
+}
+
+body {
+    background: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/90/42/3457dce0f21d524.jpg") center fixed;
     margin: 0 auto;
     text-align: center; 
+	  background-size: cover;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
 }
 nav {
     font-family: 'Righteous', cursive; 
     background-color: rgba(0, 0, 0, 0.6);
     position: fixed;
+    border-radius: 0;
+} 
+.modal-title{
+  font-family: 'Righteous', cursive;
+  font-size: 2.5em;
+  color: #5D98B4;
+}
+.modal-body {
+  font-family: 'Righteous', cursive;
+  font-size: 24px;
+  color: #5D98B4;
+}
+.navbar {
+  border-radius: 0 !important;
+  min-height: 52px;
+}
+.navbar-toggle {
+  float: left;
+  width: 20%;
+}
+.navbar-nav li a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
 }
 .navbar-brand {
     color: rgb(238,69,126);
+    float: left; 
+}
+.navbar-header {
+  min-width: 11%;
 }
 .container {
     font-family: 'Righteous', cursive;
@@ -22,14 +60,31 @@ nav {
 .container h3 {
   text-shadow: 2px 2px black;
 }
+.content-wrap {
+  flex: 1 0 auto;
+}
 footer{
     padding: 30px;
     background: black;
     color: white;
     width: 100%;
-    position: absolute;
-    position: 0;
     font-family: 'Righteous', cursive;
+}
+.row {
+  width: 100%;
+  margin-left:0;
+  margin-right: 0;
+}
+.col-md-12 {
+  padding: 0;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.btn{
+  font-size: 20px;
 }
 /*home page*/
 .howToGuide{
@@ -41,12 +96,35 @@ footer{
     font-size: 25px;
     margin-bottom: 20px;
     font-family: 'Righteous', cursive;
+    padding: 10px;
+}
+.howToGuide h3 {
+  font-size: 1.7em;
+}
+.howToGuide p, .howToGuide label {
+   font-family: 'Raleway', sans-serif;
+   font-size: 20px;
+}
+.howToGuide p:first-of-type {
+  width: 75%;
+  margin: 10px auto 20px;
+}
+.howToGuide label {
+  margin-top: 12px;
+}
+.howToGuide input{
+   font-family: 'Raleway', sans-serif;
+   font-size: 16px;
+   margin-bottom: 20px;
+   margin-top: 10px;
+   max-width: 100%;
+   text-align: center;
 }
 .jumbotron{
-    background: url(../images/header-image-mobile.jpg);
-    background: url(../images/portrait-logo.jpg);
+    background: url(../images/header-image-mobile.jpg) center;
+    background: url(../images/portrait-logo.jpg) center;
     background-position-x: center;
-    background-position-y: center;
+    background-position-y: center; 
     width: 100%;
     height: 470px;
 }
@@ -63,6 +141,7 @@ footer{
 #main-content ul {
   list-style-type: none;
 }
+
 /*favorites page*/
 .box{
 
@@ -73,6 +152,10 @@ footer{
 }
 .box img{
   border-radius: 50px;
+}
+.favs-wrap {
+  margin-bottom: 5%;
+  padding: 20px 50px 50px;
 }
 .wrapper {
     width: 100%;
@@ -143,6 +226,8 @@ span.psw {
     float: right;
     padding-top: 16px;
 }
+
+
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
@@ -406,6 +491,12 @@ span.psw {
     }
     .cancelbtn {
        width: 100%;
+    }
+    
+}
+@media only screen and (max-width: 40em) { 
+  .navbar-brand {
+      font-size: 30px;
     }
 }
 
