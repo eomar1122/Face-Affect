@@ -1,3 +1,4 @@
+// Generate and display the year at the footer
 var year = moment().format('YYYY');
 $("#year").text(year);
 
@@ -126,9 +127,10 @@ $("#submit-btn").on("click", function (event) {
                         // Empty the input form
                         $("#name-input").val("");
                         $("#fileToUpload").val(null);
+                        
                         // Call display function to show return data on the HTML
-
                         display();
+                        
                         // Call the playlist function to return the playlist related to input emotion
                         playList();
                     }
