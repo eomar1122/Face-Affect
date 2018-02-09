@@ -13,6 +13,7 @@
 	-Bootstrap
 	-Face++ API
 	-Spotify API
+	-MomentJS
 ## Authors
 	-Elshibani Omar
 	-Kate Birmingham
