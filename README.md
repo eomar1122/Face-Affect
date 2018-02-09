@@ -1,8 +1,8 @@
 # Project Title: FaceAffect
-	Overview: Using the Spotify and Face++ API's, users will submit their name and a selfie image for a recommended playlist based on their emotion. 
-	https://takashiwaseda.github.io/Group-Project-1/index.html
+ 	
+https://takashiwaseda.github.io/Group-Project-1/index.html
 	
-	<img src="https://www.dropbox.com/s/7f51dxlklfj41o2/screenShot.gif?dl=0">
+<img src="https://www.dropbox.com/s/7f51dxlklfj41o2/screenShot.gif?dl=0">
 
 
 ## How It Works
