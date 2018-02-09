@@ -1,3 +1,6 @@
+var year = moment().format('YYYY');
+$("#year").text(year);
+
 //=========================================
 // Initialize Firebase
 //=========================================
@@ -47,6 +50,8 @@ $("#submit-btn").on("click", function (event) {
     var file = uploader.files[0];
     var fileName = uploader.files[0].name;
     // Check if the form is empty or not
+ 
+
     if (nameInput != '' && file != null) {
         // Check if the inputs are valid inputs
         if (validateKey) {
@@ -55,7 +60,13 @@ $("#submit-btn").on("click", function (event) {
                 var storageRef = storage.ref("images/" + file.name);
                 $("#myModal").modal("show");
                 //display modal text if form submitted
-                $(".modal-body").html("Congratulations! Start listening now...");
+                var message = $("<h3>");
+                message.text("Congratulations! Start listening soon...")
+                var img = $("<img>");
+                img.attr("src", "http://www.nizardamji.com/img/loader.gif");
+                var loading = $("<h4>")
+                loading.text("mixing up something great for you!")
+                $(".modal-body").append(message,img,loading);
                 // Upload file
                 var task = storageRef.put(file).then(function (snapshot) {
                     // console.log("Done uploading");
@@ -66,7 +77,6 @@ $("#submit-btn").on("click", function (event) {
                     //===========================
                     //  FACE PLUS PLUS AJAX CALL
                     //===========================
-
                     $.ajax({
                         url: "https://api-us.faceplusplus.com/facepp/v3/detect",
                         method: "POST",
@@ -77,10 +87,13 @@ $("#submit-btn").on("click", function (event) {
                             return_attributes: "age,emotion"
                         }
                     }).then(function (response) {
+                        console.log(response, "response")
                         // console.log(response.faces[0].attributes.emotion);
                         // Get emotions to find out the highest value
                         var emotions = response.faces[0].attributes.emotion;
+                        console.log("emotions",emotions)
                         sortResponse(emotions);
+                        $("#myModal").modal("hide");
                     });
 
                     function sortResponse(emotion) {
@@ -114,6 +127,7 @@ $("#submit-btn").on("click", function (event) {
                         $("#name-input").val("");
                         $("#fileToUpload").val(null);
                         // Call display function to show return data on the HTML
+
                         display();
                         // Call the playlist function to return the playlist related to input emotion
                         playList();
@@ -134,6 +148,7 @@ $("#submit-btn").on("click", function (event) {
         $("#myModal").modal("show");
         $(".modal-body").html("Please fill out the form!");
     }
+    $("#name-input, #fileToUpload").val("");
 });
 
 //=========================================
@@ -207,6 +222,7 @@ function playList() {
 
 // DISPLAY FUNCTION
 function display() {
+    console.log("test")
     // Empty this section
     $("#main-content").empty();
     // Connect to firebase and get the last input
@@ -218,7 +234,7 @@ function display() {
         var emotion = snapshot.val().emotion;
         var emotionValue = snapshot.val().emotionValue;
         // Display these information on the HTML
-        $("#main-content").append("<ul><li>Your name: " + name + "</li><li><img width='200' height='200' src=" + imageURL + "/></li><li><p>You are " + emotionValue + "% " + emotion + ". We recomend you to listen to.</P></li></ul>");
+        $("#main-content").append("<ul><li><img width='200' height='200' src=" + imageURL + "/></li><li>Hi " + name + "!</li><li><p>You are " + emotionValue + "% " + emotion + ". We recomend you to listen to:</P></li></ul>");
     });
 }
 
@@ -229,6 +245,4 @@ function nameValidation(strValue) {
     var objRegExp = /^[a-zA-Z ]+$/;
     return objRegExp.test(strValue);
 }
-
-
 
