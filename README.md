@@ -4,7 +4,7 @@ Overview: Using the Spotify and Face++ API's, users will submit their name and a
  	
 https://takashiwaseda.github.io/Group-Project-1/index.html
 	
-<img src="https://www.dropbox.com/s/7f51dxlklfj41o2/screenShot.gif?dl=0">
+<img src="https://firebasestorage.googleapis.com/v0/b/project-1-7e8c4.appspot.com/o/images%2FscreenShot.gif?alt=media&token=a2434a48-dbed-4a58-b351-229bd8af513b">
 
 
 
