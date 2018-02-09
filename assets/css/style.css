@@ -1,8 +1,9 @@
 /* General effects*/
 body{
-    background: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/90/42/3457dce0f21d524.jpg");
+    background: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/90/42/3457dce0f21d524.jpg") center fixed;
     margin: 0 auto;
     text-align: center; 
+background-size: cover;
 }
 nav {
     font-family: 'Righteous', cursive; 
