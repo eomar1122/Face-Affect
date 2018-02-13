@@ -3,10 +3,6 @@
 Overview: Using the Spotify and Face++ API's, users will submit their name and a selfie image for a recommended playlist based on their emotion.
  	
 https://takashiwaseda.github.io/Group-Project-1/index.html
-	
-<img src="assets/images/screenShot.gif?raw=true">
-
-
 
 
 ## How It Works
